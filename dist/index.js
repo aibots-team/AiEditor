@@ -17012,8 +17012,7 @@ const fk = [
   "table",
   "divider",
   "printer",
-  "fullscreen",
-  "ai"
+  "fullscreen"
 ];
 class hk extends HTMLElement {
   constructor() {
@@ -17034,7 +17033,9 @@ class hk extends HTMLElement {
         try {
           if (typeof o == "string") {
             o = o.trim(), o === "|" && (o = "divider");
-            const s = document.createElement("aie-" + o);
+            const s = document.createElement(
+              "aie-" + o
+            );
             if (s.classList.add("aie-menu-item"), s.onCreate(t, r), o !== "divider") {
               const a = j(o);
               a && Ae(s, {
@@ -17060,7 +17061,10 @@ class hk extends HTMLElement {
                 // interactive:true,
               });
             }
-            s.onCreate && s.onCreate(a, t.editor.aiEditor), this.menuButtons.push(a);
+            s.onCreate && s.onCreate(
+              a,
+              t.editor.aiEditor
+            ), this.menuButtons.push(a);
           }
         } catch {
           console.error("Can not create toolbar by key: " + o);
